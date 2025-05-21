@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "402869817967",
+    "project_id": "mobile-prakerin",
+    "storage_bucket": "mobile-prakerin.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402869817967:android:ad264a9312c20ea730339a",
+        "android_client_info": {
+          "package_name": "com.skadel.jejakpklskadel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEc5rwIABIABrCKdyC8MMH2wD_RQGliHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
