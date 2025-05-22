@@ -4,4 +4,8 @@
     <string name="password">Password</string>
     <string name="daftar">Daftar</string>
     <string name="login">Login</string>
+    <string name="app_logo">App Logo</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Profile</string>
 </resources>
