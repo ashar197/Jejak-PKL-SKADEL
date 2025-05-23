@@ -14,5 +14,9 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.JejakPKLSKADEL" parent="Base.Theme.JejakPKLSKADEL" />
+    <style name="Theme.JejakPKLSKADEL" parent="Base.Theme.JejakPKLSKADEL">
+        <item name="android:windowSplashScreenBackground">#ff0000</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/googleg_standard_color_18</item>
+        <item name="android:windowSplashScreenAnimationDuration">3000</item>
+    </style>
 </resources>
