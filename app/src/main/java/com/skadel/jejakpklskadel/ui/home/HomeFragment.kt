@@ -1,6 +1,8 @@
 package com.skadel.jejakpklskadel.ui.home
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +12,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.skadel.jejakpklskadel.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
+
     private var _binding: FragmentHomeBinding? = null
 
     private val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,15 +28,22 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val textGreetingWelcome: TextView = binding.tvWelcomeGreeting
+        val textUsername: TextView = binding.tvRekanPkl
+
+        homeViewModel.welcomeGreeting.observe(viewLifecycleOwner) {
+            textGreetingWelcome.text = it
         }
+
+        homeViewModel.userName.observe(viewLifecycleOwner) {
+            textUsername.text = it
+        }
+
+
         return root
     }
      override fun onDestroyView() {
          super.onDestroyView()
          _binding = null
-
     }
 }

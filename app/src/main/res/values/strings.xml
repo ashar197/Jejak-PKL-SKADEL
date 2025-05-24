@@ -1,11 +1,18 @@
 <resources>
-    <string name="app_name">Jejak PKL SKADEL</string>
+    <string name="app_name">Jejak PKL</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="daftar">Daftar</string>
     <string name="login">Login</string>
     <string name="app_logo">App Logo</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Profile</string><string name="logo_text">Logo Sulawesi Selatan</string>
+    <string name="title_dashboard">Log</string>
+    <string name="title_notifications">Account</string>
+    <string name="logo_text">Logo Sulawesi Selatan</string>
+    <string name="home">JEJAK PKL SKADEL</string>
+    <string name="abstract_bg">Latar untuk beranda</string>
+    <string name="text_photo">Photo Profile</string>
+    <string name="text_greeting">Selamat Datang,</string>
+    <string name="text_nama_rekan">Rekan PKL SKADEL</string>
+    <string name="text_pkl_logo">PKL ID Logo</string>
 </resources>

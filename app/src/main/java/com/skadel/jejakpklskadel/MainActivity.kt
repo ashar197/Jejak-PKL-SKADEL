@@ -21,7 +21,7 @@ import com.google.firebase.ktx.Firebase
 import com.skadel.jejakpklskadel.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-//    private lateinit var auth: FirebaseAuth
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
