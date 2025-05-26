@@ -1,5 +1,6 @@
 package com.skadel.jejakpklskadel.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -12,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.skadel.jejakpklskadel.MainActivity
 import com.skadel.jejakpklskadel.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
@@ -43,12 +45,12 @@ class AuthActivity : AppCompatActivity() {
                             Log.d("Firebase", "createUserWithEmail:success")
                             val user = auth.currentUser
                             Toast.makeText(baseContext, "Pendaftaran Berhasil untuk ${user?.email}", Toast.LENGTH_SHORT).show()
+                            navigateToMainApp()
                         } else {
                             // Pendaftaran gagal
                             Log.w("Firebase", "createUserWithEmail:failure", task.exception)
                             Toast.makeText(baseContext, "Pendaftaran Gagal.", Toast.LENGTH_SHORT).show()
                         }
-
                     }
             } else {
                 Toast.makeText(this, "Email dan Password harus diisi", Toast.LENGTH_SHORT).show()
@@ -56,11 +58,36 @@ class AuthActivity : AppCompatActivity() {
             }
         }
 
+        loginButton.setOnClickListener {
+            val email = emailEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
 
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            // Login berhasil
+                            Log.d("Firebase", "signInWithEmail:success")
+                            val user = auth.currentUser
+                            Toast.makeText(baseContext, "Login Berhasil untuk ${user?.email}", Toast.LENGTH_SHORT).show()
+                            navigateToMainApp()
+                        } else {
+                            // Login gagal
+                            Log.w("Firebase", "signInWithEmail:failure", task.exception)
+                            Toast.makeText(baseContext, "Login Gagal.", Toast.LENGTH_SHORT).show()
+}
+}
+            } else {
+                Toast.makeText(this, "Email dan Password harus diisi", Toast.LENGTH_SHORT).show()
+}
+        }
     }
+
+private fun navigateToMainApp() {
+    val intent = Intent(this, MainActivity::class.java)
+
+    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+    startActivity(intent)
+    finish()
+}
 }
