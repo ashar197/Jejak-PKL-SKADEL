@@ -12,6 +12,7 @@ import com.google.firebase.ktx.Firebase
 class AuthViewModel : ViewModel() {
 
     private val auth: FirebaseAuth = Firebase.auth
+
     private val _currentUser = MutableLiveData<FirebaseUser?>()
     val currentUser: LiveData<FirebaseUser?> = _currentUser
 
