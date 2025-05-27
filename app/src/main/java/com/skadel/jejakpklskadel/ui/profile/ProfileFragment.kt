@@ -6,14 +6,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import com.skadel.jejakpklskadel.MainActivity
 import com.skadel.jejakpklskadel.databinding.FragmentProfileBinding
-import com.skadel.jejakpklskadel.ui.AuthActivity
 import com.skadel.jejakpklskadel.ui.AuthViewModel
 
 class ProfileFragment : Fragment() {

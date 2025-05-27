@@ -8,12 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import com.skadel.jejakpklskadel.databinding.FragmentHomeBinding
+import com.skadel.jejakpklskadel.ui.AuthViewModel
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+    private val authViewModel: AuthViewModel by activityViewModels()
+
 
     private val binding get() = _binding!!
 
@@ -28,17 +32,17 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textGreetingWelcome: TextView = binding.tvWelcomeGreeting
-        val textUsername: TextView = binding.tvRekanPkl
-
-        homeViewModel.welcomeGreeting.observe(viewLifecycleOwner) {
-            textGreetingWelcome.text = it
+        authViewModel.currentUser.observe(viewLifecycleOwner) { user ->
+            if (user != null) {
+                binding.tvWelcomeGreeting.text = "Selamat Datang,"
+                binding.tvRekanPkl.text = "${user.email}"
+                binding.btnAccessPklId.visibility = View.INVISIBLE
+            } else {
+                binding.tvWelcomeGreeting.text = "Selamat Datang,"
+                binding.tvRekanPkl.text = "Rekan PKL SKADEL"
+                binding.btnAccessPklId.visibility = View.VISIBLE
+            }
         }
-
-        homeViewModel.userName.observe(viewLifecycleOwner) {
-            textUsername.text = it
-        }
-
 
         return root
     }
