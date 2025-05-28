@@ -12,7 +12,12 @@
           "package_name": "com.skadel.jejakpklskadel"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "402869817967-kmdtnrjgqf5v8fac0iruk4lhrjvg2gq4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAEc5rwIABIABrCKdyC8MMH2wD_RQGliHg"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402869817967-kmdtnrjgqf5v8fac0iruk4lhrjvg2gq4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
