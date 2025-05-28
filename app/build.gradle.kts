@@ -43,8 +43,17 @@ android {
 dependencies {
 
     implementation(platform(libs.firebase.bom))
+    implementation(libs.google.firebase.auth.ktx)
+
+    implementation(libs.play.services.auth)
+    implementation (libs.androidx.credentials)
+    implementation (libs.androidx.credentials.play.services.auth)
+    implementation (libs.googleid)
+
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.viewpager2)
+
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
